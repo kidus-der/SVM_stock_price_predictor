@@ -24,9 +24,9 @@ def train_models(dates, prices):
     dates = np.reshape(dates, (len(dates), 1)) #reshape dates array to 2D array
 
     # create our three models used to predict
-    linear_model = SVR(kernel = 'linear', c = 1e3)
-    polynomial_model = SVR(kernel = 'poly', c = 1e3, degree = 2) 
-    rbf_model = SVR(kernel = 'rbf', c = 1e3, gamma = 0.1)
+    linear_model = SVR(kernel = 'linear', C = 1e3)
+    polynomial_model = SVR(kernel = 'poly', C = 1e3, degree = 2) 
+    rbf_model = SVR(kernel = 'rbf', C = 1e3, gamma = 0.1)
 
     # train our models using the '.fit' method using our two arrays for training
     linear_model.fit(dates, prices)
